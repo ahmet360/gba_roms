@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GBA ROMs Collection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>GBA BIOS & ROMs</h1>
+        <div id="bios-section">
+            <a href="BIOS/gba_bios.bin" download>Download GBA BIOS</a>
+        </div>
+    </header>
+    <nav>
+        <button onclick="filterROMs('ALL')">All</button>
+        <!-- Generate buttons A-Z for sorting -->
+        <script>
+            const container = document.querySelector('nav');
+            for (let i = 65; i <= 90; i++) {
+                let button = document.createElement('button');
+                button.textContent = String.fromCharCode(i);
+                button.onclick = function () { filterROMs(this.textContent); };
+                container.appendChild(button);
+            }
+        </script>
+    </nav>
+    <section id="roms-section">
+        <!-- ROMs will be listed here by JavaScript -->
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
